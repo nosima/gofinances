@@ -5,8 +5,20 @@ module.exports = {
     '/android',
     '/ios'
   ],
+  "setupFiles": [
+    "./jestSetupFile.js"
+  ],
   "setupFilesAfterEnv": [
     "@testing-library/jest-native/extend-expect",
     "jest-styled-components"
+  ],
+  collectCoverage: true,
+  collectCoverageFrom: [
+    "src/**/*.tsx",
+    "!src/**/*.spec.tsx",
+    "!src/**/*.test.tsx",
+  ],
+  coverageReporters: [
+    "lcov"
   ]
 }
